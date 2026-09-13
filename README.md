@@ -1,7 +1,3 @@
-# Raxor Discord Bot — Final Merged
-
-Production-oriented merge of the Raxor Cloud and GPT versions.
-
 ## Included
 - Discord bot + automatic command loading
 - Member/message/voice intents and tracking
