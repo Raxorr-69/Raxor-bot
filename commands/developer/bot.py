@@ -9,7 +9,7 @@ from utils.embeds import developer_embed
 # Developer Bot Commands
 # =========================
 
-@commands.command(name="botinfo")
+@commands.hybird_command(name="botinfo")
 @developer_only()
 async def bot_info(ctx: commands.Context):
     """Show detailed information about the bot."""
