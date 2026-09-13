@@ -16,7 +16,7 @@ class Statistics(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name="statsblacklist")
+    @commands.hybird_command(name="statsblacklist")
     @admin_only()
     @commands.guild_only()
     async def statsblacklist(self, ctx, channel: discord.TextChannel = None):
