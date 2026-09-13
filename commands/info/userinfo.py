@@ -12,7 +12,7 @@ class UserInfo(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name="userinfo")
+    @commands.hybird_command(name="userinfo")
     @commands.guild_only()
     @commands.cooldown(2, 5, commands.BucketType.user)
     async def userinfo(
