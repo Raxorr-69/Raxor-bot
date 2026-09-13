@@ -88,7 +88,7 @@ class Moderation(commands.Cog):
 
         return True
 
-    @commands.command(name="warn")
+    @commands.hybird_command(name="warn")
     @admin_only()
     @commands.guild_only()
     @commands.cooldown(3, 10, commands.BucketType.user)
@@ -161,7 +161,7 @@ class Moderation(commands.Cog):
             )
         )
 
-    @commands.command(name="kick")
+    @commands.hybird_command(name="kick")
     @admin_only()
     @commands.guild_only()
     @commands.cooldown(3, 10, commands.BucketType.user)
@@ -241,7 +241,7 @@ class Moderation(commands.Cog):
             )
         )
 
-    @commands.command(name="timeout")
+    @commands.hybird_command(name="timeout")
     @admin_only()
     @commands.guild_only()
     @commands.cooldown(3, 10, commands.BucketType.user)
@@ -341,7 +341,7 @@ class Moderation(commands.Cog):
             )
         )
 
-    @commands.command(name="ban")
+    @commands.hybird_command(name="ban")
     @admin_only()
     @commands.guild_only()
     @commands.cooldown(2, 10, commands.BucketType.user)
