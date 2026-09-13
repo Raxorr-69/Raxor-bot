@@ -22,7 +22,7 @@ class AutoMod(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name="automod")
+    @commands.hybird_command(name="automod")
     @admin_only()
     @commands.guild_only()
     @commands.cooldown(5, 10, commands.BucketType.user)
@@ -87,7 +87,7 @@ class AutoMod(commands.Cog):
             )
         )
 
-    @commands.command(name="spamconfig")
+    @commands.hybird_command(name="spamconfig")
     @admin_only()
     @commands.guild_only()
     @commands.cooldown(5, 10, commands.BucketType.user)
@@ -153,7 +153,7 @@ class AutoMod(commands.Cog):
         )
 
 
-    @commands.command(name="spamaction")
+    @commands.hybird_command(name="spamaction")
     @admin_only()
     @commands.guild_only()
     @commands.cooldown(5, 10, commands.BucketType.user)
@@ -238,7 +238,7 @@ class AutoMod(commands.Cog):
             )
         )
 
-    @commands.command(name="emojiconfig")
+    @commands.hybird_command(name="emojiconfig")
     @admin_only()
     @commands.guild_only()
     @commands.cooldown(5, 10, commands.BucketType.user)
@@ -341,7 +341,7 @@ class AutoMod(commands.Cog):
             )
         )
 
-    @commands.command(name="linkconfig")
+    @commands.hybird_command(name="linkconfig")
     @admin_only()
     @commands.guild_only()
     @commands.cooldown(5, 10, commands.BucketType.user)
