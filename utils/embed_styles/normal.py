@@ -4,25 +4,20 @@ from utils.embed_styles.base import create_base_embed
 
 
 # =========================
-# Normal Embed Color
+# RAXOR NORMAL / BOT UI
 # =========================
 
-NORMAL_COLOR = discord.Color.blurple()
-
-
-# =========================
-# Normal Embed Builder
-# =========================
+NORMAL_COLOR = discord.Color(0x8B3DFF)
 
 
 def normal_embed(
     title: str,
     description: str,
 ) -> discord.Embed:
-    """Create a clean normal bot-message embed."""
+    """Create the standard RAXOR bot interface embed."""
 
     return create_base_embed(
-        title=title,
+        title=f"› RAXOR // {title}",
         description=description,
         color=NORMAL_COLOR,
     )
