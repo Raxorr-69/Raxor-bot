@@ -95,7 +95,18 @@ class Leaderboard(commands.Cog):
         period: str | None,
         results,
     ) -> discord.Embed:
-        """Build the leaderboard embed."""
+        """Build the RAXOR leaderboard embed."""
+
+        medals = {
+            1: "🥇",
+            2: "🥈",
+            3: "🥉",
+        }
+
+        # =========================
+        # Level Leaderboard
+        # =========================
+
 
         if category == "level":
             embed = leaderboard_embed(
@@ -112,12 +123,19 @@ class Leaderboard(commands.Cog):
 
                 if member is not None:
                     name = member.display_name
+                    mention = member.mention
                 else:
                     name = f"User {user_id}"
 
+                rank_prefix = medals.get(
+                    position,
+                    f"`#{position}`",
+                )
+
                 embed.add_field(
-                    name=f"{position}. {name}",
+                    name=f"{rank_prefix}. {name}",
                     value=(
+                        f"{mention}\n"
                         f"**Level:** `{format_number(level)}`\n"
                         f"**XP:** `{format_number(xp)}`"
                     ),
@@ -125,10 +143,15 @@ class Leaderboard(commands.Cog):
                 )
 
             embed.set_footer(
-                text="Top 10 • All-time level ranking"
+                text="RAXOR • Top 10 • All-time level ranking"
             )
 
             return embed
+
+        # =========================
+        # Leaderboard Titles
+        # =========================
+
 
         titles = {
             "messages": "Message Leaderboard",
@@ -149,8 +172,17 @@ class Leaderboard(commands.Cog):
             descriptions[category],
         )
 
+
+        # =========================
+        # Messages
+        # =========================
+
+
         if category == "messages":
-            for position, row in enumerate(results[:10], start=1):
+            for position, row in enumerate(
+                results[:10],
+                start=1,
+            ):
                 user_id = row["user_id"]
                 message_count = row["message_count"]
 
@@ -158,20 +190,37 @@ class Leaderboard(commands.Cog):
 
                 if member is not None:
                     name = member.display_name
+                    mention = member.mention
                 else:
                     name = f"User {user_id}"
+                    mention = name
+
+                rank_prefix = medals.get(
+                    position,
+                    f"`#{position}`",
+                )
+
 
                 embed.add_field(
-                    name=f"{position}. {name}",
+                    name=f"{rank_prefix}. {name}",
                     value=(
-                        f"Messages: "
+                        f"{mention}\n"
+                        f"**Messages:** "
                         f"`{format_number(message_count)}`"
                     ),
                     inline=False,
                 )
+
+
+        # =========================
+        # Voice
+        # =========================
 
         elif category == "voice":
-            for position, row in enumerate(results[:10], start=1):
+            for position, row in enumerate(
+                results[:10],
+                start=1,
+            ):
                 user_id = row["user_id"]
                 voice_seconds = row["voice_seconds"]
 
@@ -179,20 +228,38 @@ class Leaderboard(commands.Cog):
 
                 if member is not None:
                     name = member.display_name
+                    mention = member.mention
                 else:
                     name = f"User {user_id}"
+                    mention = name
+
+                rank_prefix = medals.get(
+                    position,
+                    f"`#{position}`",
+                )
+
 
                 embed.add_field(
-                    name=f"{position}. {name}",
+                    name=f"{rank_prefix}. {name}",
                     value=(
-                        f"Voice Time: "
+                        f"{mention}\n"
+                        f"**Voice Time:** "
                         f"`{format_duration(voice_seconds)}`"
                     ),
                     inline=False,
                 )
 
+
+        # =========================
+        # Text Channels
+        # =========================
+
+
         elif category == "text":
-            for position, row in enumerate(results[:10], start=1):
+            for position, row in enumerate(
+                results[:10],
+                start=1,
+            ):
                 channel_id = row["channel_id"]
                 message_count = row["message_count"]
 
@@ -200,20 +267,37 @@ class Leaderboard(commands.Cog):
 
                 if channel is not None:
                     name = channel.name
+                    mention = channel.mention
                 else:
                     name = f"Channel {channel_id}"
+                    mention = name
+
+                rank_prefix = medals.get(
+                    position,
+                    f"`{position}`",
+                )
 
                 embed.add_field(
-                    name=f"{position}. #{name}",
+                    name=f"{rank_prefix}. #{name}",
                     value=(
-                        f"Messages: "
+                        f"{mention}\n"
+                        f"**Messages:** "
                         f"`{format_number(message_count)}`"
                     ),
                     inline=False,
                 )
 
+
+        # =========================
+        # Voice Channels
+        # =========================
+
+
         elif category == "voicechannel":
-            for position, row in enumerate(results[:10], start=1):
+            for position, row in enumerate(
+                results[:10],
+                start=1,
+            ):
                 channel_id = row["channel_id"]
                 voice_seconds = row["voice_seconds"]
 
@@ -221,17 +305,31 @@ class Leaderboard(commands.Cog):
 
                 if channel is not None:
                     name = channel.name
+                    mention = channel.mention
                 else:
                     name = f"Channel {channel_id}"
+                    mention = name
+
+                rank_prefix = medals.get(
+                    position,
+                    f"`{position}`",
+                )
 
                 embed.add_field(
-                    name=f"{position}. 🔊 {name}",
+                    name=f"{rank_prefix}. 🔊 {name}",
                     value=(
-                        f"Active Time: "
+                        f"{mention}\n"
+                        f"**Active Time:** "
                         f"`{format_duration(voice_seconds)}`"
                     ),
                     inline=False,
                 )
+
+        # =========================
+        # Footer
+        # =========================
+
+
 
         if period == "all":
             embed.set_footer(
