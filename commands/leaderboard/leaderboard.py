@@ -329,18 +329,17 @@ class Leaderboard(commands.Cog):
         # Footer
         # =========================
 
-
-
         if period == "all":
-            embed.set_footer(
-                text="Top 10 • All-time"
-            )
+            period_text = "ALL-TIME"
         else:
-            embed.set_footer(
-                text=f"Top 10 • {period.capitalize()}"
-            )
+            period_text = period.upper()
+
+        embed.set_footer(
+            text=f"RAXOR • Top 10 • {period_text}"
+        )
 
         return embed
+
 
 
     async def _execute_rank(
