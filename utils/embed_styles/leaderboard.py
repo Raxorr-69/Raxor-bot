@@ -7,8 +7,9 @@ from utils.embed_styles.base import create_base_embed
 # Leaderboard Colors
 # =========================
 
-LEADERBOARD_COLOR = discord.Color.gold()
+LEADERBOARD_COLOR = discord.Color(0xD4AF37)
 
+LEADERBOARD_GOLD = 0xD4AF37
 
 # =========================
 # Leaderboard Embed Builder
@@ -21,10 +22,10 @@ def leaderboard_embed(
     *,
     footer: str | None = None,
 ) -> discord.Embed:
-    """Create a futuristic leaderboard embed."""
+    """Create a RAXOR futuristic gold leaderboard embed."""
 
     embed = create_base_embed(
-        title=f"🏆 {title}",
+        title=f"◈ LEADERBOARD 🏆 {title}",
         description=description,
         color=LEADERBOARD_COLOR,
     )
@@ -33,6 +34,11 @@ def leaderboard_embed(
         embed.set_footer(text=footer)
 
     return embed
+
+
+# =========================
+# Leaderboard Entry Formatter
+# =========================
 
 
 def leaderboard_entry(
@@ -48,9 +54,18 @@ def leaderboard_entry(
         3: "🥉",
     }
 
-    prefix = medals.get(position, f"`#{position}`")
+    prefix = medals.get(
+        position,
+        f"`#{position}`",
+    )
 
     return f"{prefix} **{name}** — `{value}`"
+
+
+
+# =========================
+# Leaderboard With Entries
+# =========================
 
 
 def leaderboard_embed_with_entries(
@@ -60,7 +75,7 @@ def leaderboard_embed_with_entries(
     description: str | None = None,
     footer: str | None = None,
 ) -> discord.Embed:
-    """Create a leaderboard embed with formatted entries."""
+    """Create a RAXOR leaderboard embed with formatted entries."""
 
     embed = leaderboard_embed(
         title,
