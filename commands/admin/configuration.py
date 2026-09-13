@@ -18,7 +18,7 @@ from utils.embeds import (
 # Configuration Command
 # =========================
 
-@commands.command(name="config")
+@commands.hybird_command(name="config")
 @admin_only()
 @commands.cooldown(5, 10, commands.BucketType.user)
 async def config_command(
