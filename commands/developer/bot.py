@@ -90,7 +90,7 @@ async def bot_info(ctx: commands.Context):
     await ctx.send(embed=embed)
 
 
-@commands.command(name="botstatus")
+@commands.hybird_command(name="botstatus")
 @developer_only()
 async def bot_status(ctx: commands.Context):
     """Show the current bot runtime status."""
