@@ -4,25 +4,20 @@ from utils.embed_styles.base import create_base_embed
 
 
 # =========================
-# Profile Colors
+# RAXOR USER PROFILE
 # =========================
 
-PROFILE_COLOR = discord.Color.dark_purple()
-
-
-# =========================
-# Profile Embed Builder
-# =========================
+PROFILE_COLOR = discord.Color(0x8B3DFF)
 
 
 def profile_embed(
     title: str,
     description: str,
 ) -> discord.Embed:
-    """Create a futuristic profile embed."""
+    """Create a RAXOR user profile embed."""
 
     return create_base_embed(
-        title=title,
+        title=f"✦ USER PROFILE // {title}",
         description=description,
         color=PROFILE_COLOR,
     )
