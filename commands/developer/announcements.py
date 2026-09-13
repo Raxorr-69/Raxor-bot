@@ -10,7 +10,7 @@ from utils.embeds import developer_embed
 # Developer Announcement
 # =========================
 
-@commands.command(name="announce")
+@commands.hybird_command(name="announce")
 @developer_only()
 async def announce(
     ctx: commands.Context,
