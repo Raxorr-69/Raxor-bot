@@ -55,7 +55,7 @@ class Help(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name="help")
+    @commands.hybird_command(name="help")
     @commands.cooldown(2, 5, commands.BucketType.user)
     async def help_command(
         self,
