@@ -10,7 +10,7 @@ class ServerInfo(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name="serverinfo")
+    @commands.hybird_command(name="serverinfo")
     @commands.guild_only()
     @commands.cooldown(2, 5, commands.BucketType.user)
     async def serverinfo(self, ctx):
