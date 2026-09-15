@@ -9,7 +9,7 @@ from utils.embeds import developer_embed
 # Developer Bot Commands
 # =========================
 
-@commands.hybird_command(name="botinfo")
+@commands.hybrid_command(name="botinfo")
 @developer_only()
 async def bot_info(ctx: commands.Context):
     """Show detailed information about the bot."""
@@ -90,7 +90,7 @@ async def bot_info(ctx: commands.Context):
     await ctx.send(embed=embed)
 
 
-@commands.hybird_command(name="botstatus")
+@commands.hybrid_command(name="botstatus")
 @developer_only()
 async def bot_status(ctx: commands.Context):
     """Show the current bot runtime status."""
