@@ -9,7 +9,7 @@ class Avatar(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.hybird_command(name="avatar")
+    @commands.hybrid_command(name="avatar")
     @commands.guild_only()
     @commands.cooldown(2, 5, commands.BucketType.user)
     async def avatar(self, ctx, member: discord.Member = None):
