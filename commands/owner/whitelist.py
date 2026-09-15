@@ -18,7 +18,7 @@ class Whitelist(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.hybird_command(name="whitelist")
+    @commands.hybrid_command(name="whitelist")
     @server_owner_only()
     @commands.guild_only()
     @commands.cooldown(5, 10, commands.BucketType.user)
@@ -69,7 +69,7 @@ class Whitelist(commands.Cog):
             )
         )
 
-    @commands.hybird_command(name="unwhitelist")
+    @commands.hybrid_command(name="unwhitelist")
     @server_owner_only()
     @commands.guild_only()
     @commands.cooldown(5, 10, commands.BucketType.user)
