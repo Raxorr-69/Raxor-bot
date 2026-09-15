@@ -9,7 +9,7 @@ from utils.embeds import developer_embed
 # Developer Server Commands
 # =========================
 
-@commands.hybird_command(name="servercount")
+@commands.hybrid_command(name="servercount")
 @developer_only()
 async def server_count(ctx: commands.Context):
     """Show the total number of servers the bot is connected to."""
@@ -30,7 +30,7 @@ async def server_count(ctx: commands.Context):
     await ctx.send(embed=embed)
 
 
-@commands.hybird_command(name="serverlist")
+@commands.hybrid_command(name="serverlist")
 @developer_only()
 async def server_list(ctx: commands.Context):
     """Show a list of all servers the bot is connected to."""
@@ -95,7 +95,7 @@ async def server_list(ctx: commands.Context):
     await ctx.send(embed=embed)
 
 
-@commands.hybird_command(name="serverlookup")
+@commands.hybrid_command(name="serverlookup")
 @developer_only()
 async def server_info(
     ctx: commands.Context,
