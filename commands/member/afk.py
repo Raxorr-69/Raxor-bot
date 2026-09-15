@@ -16,7 +16,7 @@ class AFK(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.hybird_command(name="afk")
+    @commands.hybrid_command(name="afk")
     @commands.guild_only()
     @commands.cooldown(2, 5, commands.BucketType.user)
     async def afk(self, ctx, *, reason: str = "AFK"):
