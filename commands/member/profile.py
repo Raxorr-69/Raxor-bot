@@ -11,7 +11,7 @@ class Profile(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.hybird_command(name="profile")
+    @commands.hybrid_command(name="profile")
     @commands.guild_only()
     @commands.cooldown(2, 5, commands.BucketType.user)
     async def profile(self, ctx):
