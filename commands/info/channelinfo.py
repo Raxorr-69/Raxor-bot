@@ -11,7 +11,7 @@ class ChannelInfo(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.hybird_command(name="channelinfo")
+    @commands.hybrid_command(name="channelinfo")
     @commands.guild_only()
     @commands.cooldown(2, 5, commands.BucketType.user)
     async def channelinfo(
