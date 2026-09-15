@@ -8,7 +8,7 @@ from utils.embeds import developer_embed
 # Developer Command List
 # =========================
 
-@commands.hybird_command(name="devcommands")
+@commands.hybrid_command(name="devcommands")
 @developer_only()
 async def developer_commands(ctx: commands.Context):
     """Show the available developer commands."""
