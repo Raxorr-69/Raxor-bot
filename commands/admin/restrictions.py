@@ -19,7 +19,7 @@ class Restrictions(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.hybird_command(name="imageonly")
+    @commands.hybrid_command(name="imageonly")
     @admin_only()
     @commands.guild_only()
     @commands.cooldown(5, 10, commands.BucketType.user)
@@ -76,7 +76,7 @@ class Restrictions(commands.Cog):
             )
         )
 
-    @commands.hybird_command(name="clipsonly")
+    @commands.hybrid_command(name="clipsonly")
     @admin_only()
     @commands.guild_only()
     @commands.cooldown(5, 10, commands.BucketType.user)
