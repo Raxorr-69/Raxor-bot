@@ -23,7 +23,7 @@ class LevelRewards(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.hybird_command(name="addlevelreward")
+    @commands.hybrid_command(name="addlevelreward")
     @admin_only()
     @commands.guild_only()
     @commands.cooldown(5, 10, commands.BucketType.user)
@@ -82,7 +82,7 @@ class LevelRewards(commands.Cog):
             )
         )
 
-    @commands.hybird_command(name="removelevelreward")
+    @commands.hybrid_command(name="removelevelreward")
     @admin_only()
     @commands.guild_only()
     @commands.cooldown(5, 10, commands.BucketType.user)
@@ -111,7 +111,7 @@ class LevelRewards(commands.Cog):
             )
         )
 
-    @commands.hybird_command(name="levelrewards")
+    @commands.hybrid_command(name="levelrewards")
     @commands.guild_only()
     async def levelrewards(self, ctx: commands.Context):
         """List all configured level-up role rewards."""
