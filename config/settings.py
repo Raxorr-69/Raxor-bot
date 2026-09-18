@@ -13,6 +13,7 @@ load_dotenv()
 
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 BOT_OWNER_ID = int(os.getenv("BOT_OWNER_ID", "0"))
+TEST_GUILD_ID = int(os.getenv("TEST_GUILD_ID", "0"))
 
 
 # =========================
