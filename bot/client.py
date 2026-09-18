@@ -38,10 +38,22 @@ class DiscordBot(commands.Bot):
         )
 
     async def setup_hook(self):
-        """Load commands and sync slash commands."""
+    await load_commands(self)
+    self.add_view(VerificationView())
 
-        await load_commands(self)
-        self.add_view(VerificationView())
+    if TEST_GUILD_ID:
+        guild = discord.Object(id=TEST_GUILD_ID)
+
+        # Copy globally loaded commands into the test server
+        self.tree.copy_global_to(guild=guild)
+
+        synced = await self.tree.sync(guild=guild)
+        print(f"Synced {len(synced)} commands to test guild {TEST_GUILD_ID}")
+    else:
+        synced = await self.tree.sync()
+        print(f"Synced {len(synced)} global commands")
+        
+
 
         await self.tree.sync()
 
