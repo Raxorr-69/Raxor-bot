@@ -4,6 +4,9 @@ from discord.ext import commands
 from bot.command_loader import load_commands
 from web.internal import VerificationView
 
+from config.settings import TEST_GUILD_ID
+
+
 # =========================
 # Discord Intents
 # =========================
